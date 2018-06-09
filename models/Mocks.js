@@ -1,17 +1,17 @@
-import CardModel from './Card'
-import DeckModel from './Deck'
+import Card from './Card'
+import Deck from './Deck'
 
 let MockCards = [
-  new CardModel('Weakly and Static Typed', 'Dynamic Typing', 'fakeDeckID'),
-  new CardModel('Higher order functions', 'No type checks', 'fakeDeckID')
+  new Card('Weakly and Static Typed', 'Dynamic Typing', 'fakeDeckID'),
+  new Card('Higher order functions', 'No type checks', 'fakeDeckID')
 ]
 
 let MockCard = MockCards[0]
-let MockDecks = [new DeckModel('JavaScript'), new DeckModel('TypeScript')]
+let MockDecks = [new Deck('JavaScript'), new Deck('TypeScript')]
 
 MockDecks.map(deck => {
-  deck.addCard(new CardModel('Weakly and Static Typed', 'Dynamic Typing', deck.id))
-  deck.addCard(new CardModel('Higher order functions', 'No type checks', deck.id))
+  deck.addCard(new Card('Weakly and Static Typed', 'Dynamic Typing', deck.id))
+  deck.addCard(new Card('Higher order functions', 'No type checks', deck.id))
   return deck
 })
 
