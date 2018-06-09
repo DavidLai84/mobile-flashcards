@@ -46,7 +46,7 @@ yarn start
 ```
 
 ## Tested Environment
-This application has been tested throughly and is working fine on <b>Andriod Samsung Note FE</b>.
+This application has been tested throughly and is working fine on <b>Android Samsung Note FE</b>.
 
 
 ## Updating to New Releases
