@@ -11,6 +11,9 @@ const store = createStore(reducer)
 
 export default class App extends React.Component {
   componentDidMount(){
+	if (this.input) {
+      this.input.focus();
+    }
     setLocalNotification()
   }
   

@@ -4,6 +4,8 @@ Below you'll find information about performing common tasks. The most recent ver
 
 ## Table of Contents
 
+* [Installation](#installation)
+* [Tested Environment](#tested-environment)
 * [Updating to New Releases](#updating-to-new-releases)
 * [Available Scripts](#available-scripts)
   * [npm start](#npm-start)
@@ -25,6 +27,27 @@ Below you'll find information about performing common tasks. The most recent ver
   * [Networking](#networking)
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
+
+## Installation
+
+The following instructions install and launch the app using <b>yarn</b>. npm can be used in place of yarn.
+You'll need to install the following libraries using yarn install, following these steps:
+1. Navigate to the 'mobile-flashcards' folder on your terminal
+
+2. Install the libraries using
+```js
+yarn install
+```
+** Wait for installation **
+
+3. In the same folder, start the project using
+```js
+yarn start
+```
+
+## Tested Environment
+This application has been tested throughly and is working fine on <b>Andriod Samsung Note FE</b>.
+
 
 ## Updating to New Releases
 

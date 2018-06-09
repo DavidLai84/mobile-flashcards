@@ -20,6 +20,9 @@ class DeckList extends Component {
   }
 
   componentDidMount() {
+	if (this.input) {
+      this.input.focus();
+    }
     readDecks()
       .then(decks => this.props.dispatch(loadData(decks)))
   }

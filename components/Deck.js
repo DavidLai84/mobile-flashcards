@@ -7,13 +7,12 @@ import colors from '../styles/colors'
 class Deck extends Component {
   static navigationOptions = ({ navigation }) => {
     const { deck } = navigation.state.params
-    return {
+    return { 
       title: deck.name
     }
   }
-  
-  render() {
-
+   
+  render() { 
     let { deck, count, navigation } = this.props
 
     return (

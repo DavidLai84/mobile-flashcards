@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView, Alert } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from 'react-navigation'
 import { addCard } from '../actions'
@@ -35,7 +35,22 @@ class AddCard extends Component {
     }
     this.props.addCard(question, answer, this.props.deckId)
     this.setState(() => ({ question: '', answer: '' }))
-    this.props.navigation.goBack()
+	this.showSuccessMessage()
+  }
+  
+  showSuccessMessage = () => {
+	Alert.alert(
+	  'New card added successfully!',
+	  '',
+	  [
+		{text: 'OK', onPress: () => {
+			const count = this.props.cardCount + 1
+			const deck = this.props.deck
+			this.props.navigation.navigate('Deck', { deck, count })
+		}},
+	  ],
+	  { cancelable: false }
+	)
   }
 
   render() {
@@ -64,7 +79,7 @@ class AddCard extends Component {
           )}
           <TouchableOpacity
             style={styles.button}
-            onPress={this._createCard}>
+            onPress={() => this._createCard()}>
             <Text style={styles.buttonText}>Add Card</Text>
           </TouchableOpacity>
         </View>
@@ -75,7 +90,9 @@ class AddCard extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    deckId: props.navigation.state.params.deck.id
+    deckId: props.navigation.state.params.deck.id,
+    deck: props.navigation.state.params.deck,
+    cardCount: props.navigation.state.params.count
   }
 }
 
